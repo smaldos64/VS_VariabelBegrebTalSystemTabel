@@ -85,6 +85,12 @@ namespace VariabelBegreb.Tools
     {
         #region TalSystemer
         public static readonly int GridStartNumberSystemRow = 5;
+        public static readonly int LabelColumnPosition = 0;
+        public static readonly int LabelColumnSpan = 0;
+        public static readonly int TextBoxColumnPosition = 2;
+        public static readonly int TextBoxColumnSpan = 4;
+        public static readonly int TextBoxWidth = 240;
+        public static readonly int TextBoxHeight = 23;
 
         private static Key[] Radix2ValidKeysArray = { Key.D0, Key.D1 };
         private static Key[] Radix8ValidKeysArray = { Key.D0, Key.D1, Key.D2, Key.D3, Key.D4, Key.D5, Key.D6, Key.D7};

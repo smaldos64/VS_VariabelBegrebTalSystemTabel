@@ -102,5 +102,18 @@ namespace VariabelBegreb.Tools
             Grid.SetColumn(Label_Object, ColumnPosition);
             Grid.SetRow(Label_Object, RowPosition);
         }
+
+        public static void InsertTextBoxInGrid(Grid Grid_Object, string TextBoxName, int RowPosition, int ColumnPosition, int ColumnSpan, int Width)
+        {
+            TextBox TextBox_Object = new TextBox();
+
+            TextBox_Object.Name = TextBoxName;
+            TextBox_Object.SetValue(Grid.ColumnSpanProperty, ColumnSpan);
+            TextBox_Object.Width = Width;
+
+            Grid_Object.Children.Add(TextBox_Object);
+            Grid.SetColumn(TextBox_Object, ColumnPosition);
+            Grid.SetRow(TextBox_Object, RowPosition);
+        }
     }
 }
