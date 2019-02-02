@@ -22,7 +22,6 @@ namespace VariabelBegreb.NumberSystems
         {
             return (this.ConstRadixSystemAndDelegates_Object.ConstRadixSystem_Object.ValidKeysArray.Contains(ThisKey) ||
                     KeyHelper.IsKeyPressedValicControlKey(ThisKey));
-            //return (this.ValidKeysArray.Contains(ThisKey) || KeyHelper.IsKeyPressedValicControlKey(ThisKey));
         }
 
         public override string ConvertFromRadix10(int Radix10Number)
@@ -38,20 +37,10 @@ namespace VariabelBegreb.NumberSystems
             }
             else
             {
-                ReturnString = this.ConstRadixSystemAndDelegates_Object.FunctionPointerFromRadix10(Radix10Number);
+                ReturnString = this.ConstRadixSystemAndDelegates_Object.FunctionPointerFromRadix10(Radix10Number,
+                    this.ConstRadixSystemAndDelegates_Object.ConstRadixSystem_Object.RadixSpaceCharacter,
+                    this.ConstRadixSystemAndDelegates_Object.ConstRadixSystem_Object.RadixSpaceCounter);
             }
-
-            //ConstRadixSystem ConstRadixSystem_Object = Const.FindRadixSystem(RadixNumber_ENUM.HEXADECIMAL_NUMBER);
-
-            //if (null != ConstRadixSystem_Object)
-            //{
-            //    ReturnString = base.ConvertFromRadix10(Radix10Number, (int)RadixNumber_ENUM.HEXADECIMAL_NUMBER,
-            //        ConstRadixSystem_Object.RadixSpaceCounter, ConstRadixSystem_Object.RadixSpaceCharacter);
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Der er vist en SW bug her !!!");
-            //}
 
             return (ReturnString);
         }
@@ -63,11 +52,13 @@ namespace VariabelBegreb.NumberSystems
             if (null == this.ConstRadixSystemAndDelegates_Object.FunctionPointerToRadix10)
             {
                 Radix10Value = base.ConvertToRadix10(RadixStringToConvert, 
-                                                     this.ConstRadixSystemAndDelegates_Object.ConstRadixSystem_Object.RadixValue);
+                                                     this.ConstRadixSystemAndDelegates_Object.ConstRadixSystem_Object.RadixValue,
+                                                     this.ConstRadixSystemAndDelegates_Object.ConstRadixSystem_Object.RadixSpaceCharacter);
             }
             else
             {
-                Radix10Value = this.ConstRadixSystemAndDelegates_Object.FunctionPointerToRadix10(RadixStringToConvert);
+                Radix10Value = this.ConstRadixSystemAndDelegates_Object.FunctionPointerToRadix10(RadixStringToConvert,
+                                                                                                 this.ConstRadixSystemAndDelegates_Object.ConstRadixSystem_Object.RadixSpaceCharacter);
             }
 
             return (Radix10Value);

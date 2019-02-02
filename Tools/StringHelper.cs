@@ -43,5 +43,13 @@ namespace VariabelBegreb.Tools
 
             return sb.ToString();
         }
+
+        public static string TrimAndRemoveSpecifiedCharacterFromString(string InputString, char CharToRemove)
+        {
+            InputString = InputString.Trim();
+            InputString = InputString.Replace(CharToRemove.ToString(), string.Empty);
+
+            return (InputString);
+        }
     }
 }

@@ -39,7 +39,8 @@ namespace VariabelBegreb.NumberSystems
 
         public override int ConvertToRadix10(string RadixStringToConvert)
         {
-            int Radix10Value = base.ConvertToRadix10(RadixStringToConvert, 1);
+            int Radix10Value = 0;
+            //int Radix10Value = base.ConvertToRadix10(RadixStringToConvert, 1);
 
             return (Radix10Value);
         }

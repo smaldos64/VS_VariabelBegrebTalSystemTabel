@@ -29,11 +29,13 @@ namespace VariabelBegreb.NumberSystems
                 Carry = NumberToConvert % RadixValue;
                 OutputString += NumberSystemHelper.MyCharConverter(Carry);
 
-                //if (0 == StringCounter % RadixSpaceCounter)
-                //{
-                //    OutputString += RadixSeperationCharacter;
-                //}
-
+                if (0 != RadixSpaceCounter)
+                {
+                    if (0 == StringCounter % RadixSpaceCounter)
+                    {
+                        OutputString += RadixSeperationCharacter;
+                    }
+                }
                 NumberToConvert = NumberCalculated;
             } while (NumberCalculated > 0);
 
@@ -42,24 +44,15 @@ namespace VariabelBegreb.NumberSystems
 
         public abstract int ConvertToRadix10(string RadixStringToConvert);
 
-        public virtual int ConvertToRadix10(string RadixStringToConvert, int RadixValue)
+        public virtual int ConvertToRadix10(string RadixStringToConvert, int RadixValue, char CharacterToRemove)
         {
             int Radix10Value = 0;
 
             RadixStringToConvert = StringHelper.ReverseString(RadixStringToConvert);
+            RadixStringToConvert = StringHelper.TrimAndRemoveSpecifiedCharacterFromString(RadixStringToConvert, CharacterToRemove);
 
             for (int Counter = 0; Counter < RadixStringToConvert.Length; Counter++)
             {
-                //if (RadixNumber_ENUM.HEXADECIMAL_NUMBER == Radix)
-                //{
-                //    Radix10Value += (int)Math.Pow((int)Radix, Counter) * int.Parse(RadixStringToConvert[Counter].ToString(),
-                //        System.Globalization.NumberStyles.HexNumber);
-                //}
-                //else
-                //{
-                //    Radix10Value += (int)Math.Pow((int)Radix, Counter) * (int)Char.GetNumericValue(RadixStringToConvert[Counter]);
-                //}
-
                 Radix10Value += (int)Math.Pow(RadixValue, Counter) * NumberSystemHelper.MyNumberConverter(RadixStringToConvert[Counter]);
             }
 

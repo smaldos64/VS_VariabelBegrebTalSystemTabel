@@ -40,11 +40,8 @@ namespace VariabelBegreb.Tools
         }
     }
 
-    public delegate string ConvertFromRadix10Int(int Radix10Number);
-    public delegate int ConvertToRadix10Int(string Radix10String);
-
-    public delegate void TextChanged(object sender, TextChangedEventArgs e);
-    public delegate void KeyPressed(object sender, KeyEventArgs e);
+    public delegate string ConvertFromRadix10Int(int Radix10Number, char CharacterToInsert, int CharacterToInsertCouner);
+    public delegate int ConvertToRadix10Int(string Radix10String, char CharacterToRemove);
 
     public class ConstRadixSystemAndDelegates
     {

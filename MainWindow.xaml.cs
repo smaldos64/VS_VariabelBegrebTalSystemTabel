@@ -1589,9 +1589,11 @@ namespace VariabelBegreb
             return (-1);
         }
 
-        public static int ConvertToRadix10IntFromRadix10String(string RadixStringToConvert)
+        public static int ConvertToRadix10IntFromRadix10String(string RadixStringToConvert, char CharacterToRemove)
         {
             int Radix10Number;
+
+            RadixStringToConvert = StringHelper.TrimAndRemoveSpecifiedCharacterFromString(RadixStringToConvert, CharacterToRemove);
 
             try
             {
@@ -1605,14 +1607,16 @@ namespace VariabelBegreb
             return (Radix10Number);
         }
 
-        public static string ConvertFromRadix10IntToRadix10String(int Radix10Number)
+        public static string ConvertFromRadix10IntToRadix10String(int Radix10Number, 
+                                                                  char CharacterToInsert, 
+                                                                  int CharacterToInsertCouner)
         {
             string ReturnString = " ";
                         
             ReturnString = Radix10Number.ToString();
-            //ReturnString = StringHelper.InsertCharacterInStringAtSpecifiedInterval(ReturnString,
-            //                                                                       ConstRadixSystem_Object.RadixSpaceCounter,
-            //                                                                       ConstRadixSystem_Object.RadixSpaceCharacter);
+            ReturnString = StringHelper.InsertCharacterInStringAtSpecifiedInterval(ReturnString,
+                                                                                   CharacterToInsertCouner,
+                                                                                   CharacterToInsert);
             return (ReturnString);
         }
 
