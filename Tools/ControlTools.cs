@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Documents;
 
 namespace VariabelBegreb.Tools
@@ -89,8 +90,8 @@ namespace VariabelBegreb.Tools
             return (LinesInTextBlock);
         }
 
-        public static void InsertLabelInGrid(Grid Grid_Object, string LabelName, string LabelText,
-                                             int RowPosition, int ColumnPosition, int ColumnSpan)
+        public static Label InsertLabelInGrid(Grid Grid_Object, string LabelName, string LabelText,
+                                              int RowPosition, int ColumnPosition, int ColumnSpan)
         {
             Label Label_Object = new Label();
 
@@ -101,19 +102,30 @@ namespace VariabelBegreb.Tools
             Grid_Object.Children.Add(Label_Object);
             Grid.SetColumn(Label_Object, ColumnPosition);
             Grid.SetRow(Label_Object, RowPosition);
+
+            return (Label_Object);
         }
 
-        public static void InsertTextBoxInGrid(Grid Grid_Object, string TextBoxName, int RowPosition, int ColumnPosition, int ColumnSpan, int Width)
+        public static TextBox InsertTextBoxInGrid(Grid Grid_Object, string TextBoxName, int RowPosition, 
+                                                  int ColumnPosition, int ColumnSpan, int Width, int Height,
+                                                  KeyEventHandler FunctionKeyDown,
+                                                  TextChangedEventHandler FunctionTextChanged)
         {
             TextBox TextBox_Object = new TextBox();
 
             TextBox_Object.Name = TextBoxName;
             TextBox_Object.SetValue(Grid.ColumnSpanProperty, ColumnSpan);
             TextBox_Object.Width = Width;
+            TextBox_Object.Height = Height;
+
+            TextBox_Object.TextChanged += FunctionTextChanged;
+            TextBox_Object.KeyDown += FunctionKeyDown;
 
             Grid_Object.Children.Add(TextBox_Object);
             Grid.SetColumn(TextBox_Object, ColumnPosition);
             Grid.SetRow(TextBox_Object, RowPosition);
+
+            return (TextBox_Object);
         }
     }
 }

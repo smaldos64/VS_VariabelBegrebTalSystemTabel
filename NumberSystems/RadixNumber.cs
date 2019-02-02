@@ -32,7 +32,7 @@ namespace VariabelBegreb.NumberSystems
             if (null == this.ConstRadixSystemAndDelegates_Object.FunctionPointerFromRadix10)
             {
                 ReturnString = base.ConvertFromRadix10(Radix10Number,
-                    (int)this.ConstRadixSystemAndDelegates_Object.ConstRadixSystem_Object.RadixNumber,
+                    this.ConstRadixSystemAndDelegates_Object.ConstRadixSystem_Object.RadixValue,
                     this.ConstRadixSystemAndDelegates_Object.ConstRadixSystem_Object.RadixSpaceCounter,
                     this.ConstRadixSystemAndDelegates_Object.ConstRadixSystem_Object.RadixSpaceCharacter);
             }
@@ -63,7 +63,7 @@ namespace VariabelBegreb.NumberSystems
             if (null == this.ConstRadixSystemAndDelegates_Object.FunctionPointerToRadix10)
             {
                 Radix10Value = base.ConvertToRadix10(RadixStringToConvert, 
-                                                     this.ConstRadixSystemAndDelegates_Object.ConstRadixSystem_Object.RadixNumber);
+                                                     this.ConstRadixSystemAndDelegates_Object.ConstRadixSystem_Object.RadixValue);
             }
             else
             {

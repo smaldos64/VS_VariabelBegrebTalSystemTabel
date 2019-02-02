@@ -39,7 +39,7 @@ namespace VariabelBegreb.NumberSystems
 
         public override int ConvertToRadix10(string RadixStringToConvert)
         {
-            int Radix10Value = base.ConvertToRadix10(RadixStringToConvert, RadixNumber_ENUM.HEXADECIMAL_NUMBER);
+            int Radix10Value = base.ConvertToRadix10(RadixStringToConvert, 1);
 
             return (Radix10Value);
         }

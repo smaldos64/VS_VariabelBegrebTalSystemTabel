@@ -27,7 +27,6 @@ namespace VariabelBegreb.NumberSystems
                 StringCounter++;
                 NumberCalculated = NumberToConvert / RadixValue;
                 Carry = NumberToConvert % RadixValue;
-                //OutputString += Carry.ToString("X");
                 OutputString += NumberSystemHelper.MyCharConverter(Carry);
 
                 //if (0 == StringCounter % RadixSpaceCounter)
@@ -43,7 +42,7 @@ namespace VariabelBegreb.NumberSystems
 
         public abstract int ConvertToRadix10(string RadixStringToConvert);
 
-        public virtual int ConvertToRadix10(string RadixStringToConvert, RadixNumber_ENUM Radix)
+        public virtual int ConvertToRadix10(string RadixStringToConvert, int RadixValue)
         {
             int Radix10Value = 0;
 
@@ -61,7 +60,7 @@ namespace VariabelBegreb.NumberSystems
                 //    Radix10Value += (int)Math.Pow((int)Radix, Counter) * (int)Char.GetNumericValue(RadixStringToConvert[Counter]);
                 //}
 
-                Radix10Value += (int)Math.Pow((int)Radix, Counter) * NumberSystemHelper.MyNumberConverter(RadixStringToConvert[Counter]);
+                Radix10Value += (int)Math.Pow(RadixValue, Counter) * NumberSystemHelper.MyNumberConverter(RadixStringToConvert[Counter]);
             }
 
             return (Radix10Value);

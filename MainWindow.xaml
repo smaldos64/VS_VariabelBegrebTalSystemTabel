@@ -443,7 +443,7 @@
                         <Label Content="lbl2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Name="lblTalsystemer2" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="10" />
                         <Label Content="lbl3" HorizontalAlignment="Left" VerticalAlignment="Bottom" Name="lblTalsystemer3" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="10" />
 
-                        <Button Content="Clear" VerticalAlignment="Top" Name="btnCalculateNumberSystemsClear" Grid.Column="5" Grid.Row="4" HorizontalAlignment="Left" Width="75" Click="btnCalculateNumberSystemsClear_Click" />
+                        <Button Content="Clear" VerticalAlignment="Top" Name="btnCalculateNumberSystemsClear" Grid.Column="6" Grid.Row="4" HorizontalAlignment="Left" Width="75" Click="btnCalculateNumberSystemsClear_Click" />
 
                         <!--<Label Content="Romertal : " HorizontalAlignment="Left" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2" Name="lblRomerNumber"/>
                         <TextBox Grid.ColumnSpan="4" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="240" Grid.Column="2" Grid.Row="5" Name="txtRomerNumber" KeyDown="txtCheckForValidNumberSystemKeyPressed" TextChanged="txtNumberSystem_TextChanged" />
